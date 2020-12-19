@@ -1,10 +1,13 @@
 const inputuser = document.querySelector("input[name=user]")
 const inputpassword = document.querySelector("input[name=password]")
 
+const buttonsubmit = document.querySelector("input[type=submit]")
+
+const divinvalid = document.querySelector(".invalid")
 const diverror = document.querySelector('#diverroruser')
 const diverrorpassword = document.querySelector('#diverrorpassword')
 
-//  Para simular uma suposta requesição do nome e senha do usuário vindo banco de dados do
+//  Para simular uma suposta requesição do nome e senha do usuário vindo banco de dados 
 const nameu = 'Fulano'
 const password = '12345'
 
@@ -24,8 +27,14 @@ function validatelogin() {
         else diverrorpassword.style.display = 'none'
     })
 
-    // if (inputuser.value === name & inputpassword.value === password) console.log('sdsdsd')
 
 }
 validatelogin()
-    // console.log('dsds')
+buttonsubmit.addEventListener('click', (e) => {
+    const validate = inputuser.value != name & inputpassword.value != password
+
+    if (validate) {
+        e.preventDefault()
+        divinvalid.style.display = 'block'
+    }
+})
