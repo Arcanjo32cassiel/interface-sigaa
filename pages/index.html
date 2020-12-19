@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Barra de navegacação</title>
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../public/css/style.css">
 </head>
 
 <body>
@@ -21,6 +21,7 @@
             <div class="conteiner-sigaa conteiner-child  active">
                 <a href="">sigaa</a>
             </div>
+
 
             <div class="conteiner-adm conteiner-child">
                 <a href="">sigaAdm</a>
@@ -45,19 +46,19 @@
         <!-- menus de login e cadastros  -->
         <div class="login">
             <div class="login-user">
-                <form class="form-login">
+                <form class="form-login" action="./studentarea.html" method="POST" method="GET">
                     <div class="user">
-
-                        <label for="user">Usuario:</label>
-                        <input type="text" id="user" placeholder="Digite Usuario">
+                        <label for="user">Usuário:</label>
+                        <input type="text" name="user" id="user" placeholder="Digite Usuário" required>
+                        <div id="diverroruser" style=" display: none; color:red;  font-size: 14px">A nome de usuário deve ter pelo menos 5 caracteres</div>
                     </div>
                     <div class="password">
-
                         <label for="password">Senha</label>
-                        <input type="password" id="password">
+                        <input type="password" name="password" id="password" required>
+                        <div id="diverrorpassword" style=" display: none; color:red;  font-size: 14px">A senha deve ter pelo menos 5 caracteres</div>
                     </div>
 
-                    <input type="button" value="Entrar">
+                    <input type="submit" value="Entrar">
                 </form>
             </div>
             <div class="notlogin">
@@ -83,6 +84,7 @@
         </div>
 
     </div>
+    <script src="../public/index.js"></script>
 </body>
 
 </html>
